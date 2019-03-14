@@ -1,0 +1,194 @@
+/* 基础样式 */
+html, body {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../../../static/home-bg.png) no-repeat center center;
+    overflow: hidden;
+    color: #fff;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+}
+
+/* 导航样式 */
+.navbar {
+    margin: 20px;
+}
+
+.navbar .navbar-brand > img {
+    display: inline-block;
+}
+
+.navbar .navbar-title {
+    color: #0d8697;
+}
+
+.main .form-title {
+    height: 40px;
+    line-height: 40px;
+    padding-left: 15px;
+}
+
+.main .main-top .main-top-1,
+.main .main-top .main-top-2,
+.main .main-top .main-top-3,
+.main .main-bottom .main-bottom-1,
+.main .main-bottom .main-bottom-2,
+.main .main-bottom .main-bottom-3 {
+    height: 350px;
+    background-color: #131b4c;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+    box-shadow: 1px 1px 5px #666;
+}
+
+.main .platform,
+.main .sentiment-index,
+.main .curriculum-state,
+.main .student-state {
+    height: 300px;
+}
+
+/* 主要内容上面 */
+.main .main-top {
+    margin-bottom: 35px;
+}
+
+.main .main-top .main-top-1 .col-lg-5 .img {
+    width: 200px;
+    height: 265px;
+}
+
+.main .main-top .main-top-1 .col-lg-5 .img img {
+    width: 100%;
+    height: 100%;
+}
+
+.main .list-group .list-group-item {
+    background-color: transparent;
+    border: none;
+}
+
+/* 主要内容下面 */
+.main .main-bottom .main-bottom-1 .col-lg-4 {
+    padding: 0;
+}
+
+.main .main-bottom .main-bottom-1 .student-list {
+    padding: 10px 0 15px 0;
+    background: url("../../../static/home-bg-2.png") no-repeat 0 0;
+    background-size: 94%;
+}
+
+.main .main-bottom .main-bottom-1 .student-list .list-group-item {
+    padding: 3px 10px;
+}
+
+.main .main-bottom .main-bottom-1 .student-list .list-group-item span {
+    margin-right: 10%;
+}
+
+.main .main-bottom .main-bottom-3 .img {
+    height: 180px;
+}
+
+.main .main-bottom .main-bottom-3 .img img {
+    width: 100%;
+    height: 100%;
+}
+
+.main .main-bottom .main-bottom-3 .col-lg-4 .name,
+.main .main-bottom .main-bottom-3 .col-lg-4 .id {
+    border: 1px solid #2e6da4;
+    margin-top: 10px;
+}
+
+/* 底部css3动画 */
+@keyframes move_wave {
+    0% {
+        transform: translateX(0) translateZ(0) scaleY(1)
+    }
+    50% {
+        transform: translateX(-25%) translateZ(0) scaleY(0.55)
+    }
+    100% {
+        transform: translateX(-50%) translateZ(0) scaleY(1)
+    }
+}
+
+.footer-animate {
+    width: 100%;
+    overflow: hidden;
+}
+
+.waveWrapper {
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.waveWrapperInner {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+    bottom: -1px;
+}
+
+.bgTop {
+    z-index: 15;
+    opacity: 0.5;
+}
+
+.bgMiddle {
+    z-index: 10;
+    opacity: 0.75;
+}
+
+.bgBottom {
+    z-index: 5;
+}
+
+.wave {
+    position: absolute;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background-repeat: repeat no-repeat;
+    background-position: 0 bottom;
+    transform-origin: center bottom;
+}
+
+.waveTop {
+    background-size: 50% 100px;
+}
+
+.waveAnimation .waveTop {
+    animation: move-wave 3s;
+    -webkit-animation: move-wave 3s;
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+}
+
+.waveMiddle {
+    background-size: 50% 120px;
+}
+
+.waveAnimation .waveMiddle {
+    animation: move_wave 10s linear infinite;
+}
+
+.waveBottom {
+    background-size: 50% 100px;
+}
+
+.waveAnimation .waveBottom {
+    animation: move_wave 15s linear infinite;
+}

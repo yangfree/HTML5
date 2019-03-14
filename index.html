@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>课程中心</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 网站描述和关键词  针对SEO -->
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <!-- bootstrap.css -->
+    <link rel="stylesheet" href="./static/bootstrap/css/bootstrap.css">
+    <!-- 引入公用组件样式 -->
+    <link rel="stylesheet" href="./static/bootstrap/css/index.css">
+    <!-- 针对IE8及以下浏览器兼容H5标签和媒体查询 -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!-- 导航 -->
+<nav class="navbar">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+                <img class="img-responsive img-circle" alt="Brand" src="./static/home-logo.png">
+            </a>
+        </div>
+        <h3 class="navbar-title">课程综合指数统计平台</h3>
+    </div>
+</nav>
+<!-- 主内容 -->
+<div class="main">
+    <div class="container-fluid main-top">
+        <div class="col-lg-4">
+            <div class="main-top-1">
+                <h4 class="form-title">课程详情</h4>
+                <div class="col-lg-5">
+                    <div class="img pull-right">
+                        <img class="img-thumbnail img-responsive" src="./static/home-1.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <span>课程名称</span>
+                        </li>
+                        <li class="list-group-item">
+                            <span>所属院校: 某某某某院校</span>
+                        </li>
+                        <li class="list-group-item">
+                            <span>所属专业: 某某某某专业</span>
+                        </li>
+                        <li class="list-group-item">
+                            <span>授课教师: 某某某</span>
+                        </li>
+                        <li class="list-group-item">
+                            <span>课程时间: 152分钟</span>
+                        </li>
+                        <li class="list-group-item">
+                            <span>参加人数: 152人</span>
+                        </li>
+                        <li class="list-group-item">
+                            <span>可见性: 公开</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <div class="main-top-2">
+                <h4 class="form-title">平台情况</h4>
+                <div class="col-lg-7 platform" id="platform"></div>
+                <div class="col-lg-5 platform">
+                    <div class="col-lg-6" id="pieChart1" style="height: 100%"></div>
+                    <div class="col-lg-6" id="pieChart2" style="height: 100%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid main-bottom">
+        <div class="col-lg-5">
+            <div class="main-bottom-1">
+                <h4 class="form-title">情绪指数</h4>
+                <div class="col-lg-8 sentiment-index" id="sentimentIndex"></div>
+                <div class="col-lg-4">
+                    <div class="student-list text-center">
+                        <h5 class="text-center">疑惑(251)</h5>
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                <span><i class="glyphicon glyphicon-education"></i>学员姓名</span>
+                                <span><i class="glyphicon glyphicon-education"></i>学员姓名</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span><i class="glyphicon glyphicon-education"></i>学员姓名</span>
+                                <span><i class="glyphicon glyphicon-education"></i>学员姓名</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span><i class="glyphicon glyphicon-education"></i>学员姓名</span>
+                                <span><i class="glyphicon glyphicon-education"></i>学员姓名</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span><i class="glyphicon glyphicon-education"></i>学员姓名</span>
+                                <span><i class="glyphicon glyphicon-education"></i>学员姓名</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span><i class="glyphicon glyphicon-education"></i>学员姓名</span>
+                                <span><i class="glyphicon glyphicon-education"></i>学员姓名</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span><i class="glyphicon glyphicon-education"></i>学员姓名</span>
+                                <span><i class="glyphicon glyphicon-education"></i>学员姓名</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span><i class="glyphicon glyphicon-education"></i>学员姓名</span>
+                                <span><i class="glyphicon glyphicon-education"></i>学员姓名</span>
+                            </li>
+                            <li class="list-group-item">
+                                <span><i class="glyphicon glyphicon-education"></i>学员姓名</span>
+                                <span><i class="glyphicon glyphicon-education"></i>学员姓名</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="main-bottom-2">
+                <h4 class="form-title">课程状态综合指数</h4>
+                <div class="row curriculum-state" id="curriculumState"></div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="main-bottom-3">
+                <h4 class="form-title">学员课程状态指数</h4>
+                <div class="col-lg-4 text-center">
+                    <div class="container-fluid">
+                        <p class="img">
+                            <img class="img-responsive img-thumbnail" src="./static/home-1.jpg" alt="">
+                        </p>
+                        <div class="name">
+                            <span>姓名: 崔某某</span>
+                        </div>
+                        <div class="id">
+                            <span>ID: 1523654</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8 student-state" id="studentState"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 底部动画 -->
+<div class="footer-animate">
+    <div class="waveWrapper waveAnimation ">
+        <div class="waveWrapperInner bgTop row">
+            <div class="wave waveTop" style="background-image: url('./static/wave-top.png');background-size: 20%"></div>
+        </div>
+        <div class="waveWrapperInner bgMiddle">
+            <div class="wave waveMiddle"
+                 style="background-image: url('./static/wave-mid.png');background-size: 20%"></div>
+        </div>
+        <div class="waveWrapperInner bgBottom">
+            <div class="wave waveBottom"
+                 style="background-image: url('./static/wave-bot.png');background-size: 20%"></div>
+        </div>
+    </div>
+</div>
+<!-- 引入jquery 文件版本1.42 -->
+<script src="./static/bootstrap/js/jquery.js"></script>
+<!-- 引入bootstrap.js文件 -->
+<script src="./static/bootstrap/js/bootstrap.js"></script>
+<!-- 引入echarts -->
+<script src="./static/bootstrap/js/echarts.js"></script>
+<script>
+    $(function () {
+        // 设置屏幕高度为当前屏幕高度
+        let bodyHeight = $(window).height();
+        $('body').css('height', bodyHeight);
+    });
+    //    平台情况图表
+    let platform = echarts.init(document.getElementById('platform'), 'dark');
+    option = {
+        backgroundColor: 'transparent',
+        xAxis: {
+            type: 'category',
+            data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+        },
+        yAxis: {
+            type: 'value'
+        },
+        series: [{
+            data: [820, 932, 901, 934, 1290, 1330, 1320],
+            type: 'line',
+            smooth: true
+        }]
+    };
+    platform.setOption(option);
+    //    饼状图
+    let pieChart1 = echarts.init(document.getElementById('pieChart1'), 'dark');
+    let pieChart2 = echarts.init(document.getElementById('pieChart2'), 'dark');
+    option = {
+        backgroundColor: 'transparent',
+        title: {
+            text: 'Customized Pie',
+            left: 'center',
+            top: 20,
+            textStyle: {
+                color: '#fff'
+            }
+        },
+        tooltip: {
+            trigger: 'item',
+            formatter: "{a} <br/>{b} : {c} ({d}%)"
+        },
+
+        visualMap: {
+            show: false,
+            min: 80,
+            max: 600,
+            inRange: {
+                colorLightness: [0, 1]
+            }
+        },
+        series: [
+            {
+                name: '访问来源',
+                type: 'pie',
+                radius: '55%',
+                center: ['50%', '50%'],
+                data: [
+                    {value: 335, name: '直接访问'},
+                    {value: 310, name: '邮件营销'},
+                    {value: 274, name: '联盟广告'},
+                    {value: 235, name: '视频广告'},
+                    {value: 400, name: '搜索引擎'}
+                ].sort(function (a, b) {
+                    return a.value - b.value;
+                }),
+                roseType: 'radius',
+                label: {
+                    normal: {
+                        textStyle: {
+                            color: 'rgba(255, 255, 255, 0.3)'
+                        }
+                    }
+                },
+                labelLine: {
+                    normal: {
+                        lineStyle: {
+                            color: 'rgba(255, 255, 255, 0.3)'
+                        },
+                        smooth: 0.2,
+                        length: 10,
+                        length2: 20
+                    }
+                },
+                itemStyle: {
+                    normal: {
+                        color: '#c23531',
+                        shadowBlur: 200,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                },
+                animationType: 'scale',
+                animationEasing: 'elasticOut',
+                animationDelay: function (idx) {
+                    return Math.random() * 200;
+                }
+            }
+        ]
+    };
+    pieChart1.setOption(option);
+    pieChart2.setOption(option);
+    //    情绪指数
+    let sentimentIndex = echarts.init(document.getElementById('sentimentIndex'), 'dark');
+    option = {
+        backgroundColor: 'transparent',
+        xAxis: {
+            type: 'category',
+            data: ['专注', '疑惑', '思考', '喜悦', '理解', '惊喜']
+        },
+        yAxis: {
+            type: 'value'
+        },
+        series: [{
+            data: [6200, 2000, 5500, 8000, 7000, 9999],
+            type: 'bar'
+        }]
+    };
+    sentimentIndex.setOption(option);
+    //    课程状态综合指数
+    let curriculumState = echarts.init(document.getElementById('curriculumState'), 'dark');
+    option = {
+        backgroundColor: 'transparent',
+        tooltip: {
+            trigger: 'axis',
+            axisPointer: {
+                type: 'shadow'
+            }
+        },
+        legend: {
+            data: ['2011年', '2012年']
+        },
+        grid: {
+            left: '3%',
+            right: '4%',
+            bottom: '3%',
+            containLabel: true
+        },
+        xAxis: {
+            type: 'value',
+            boundaryGap: [0, 0.01]
+        },
+        yAxis: {
+            type: 'category',
+            data: ['专注', '书写', '回答', '瞌睡', '互动']
+        },
+        series: [
+            {
+                name: '2011年',
+                type: 'bar',
+                data: [0, 20, 40, 60, 80, 100]
+            },
+            {
+                name: '2012年',
+                type: 'bar',
+                data: [0, 20, 40, 60, 80, 100]
+            }
+        ]
+    };
+    curriculumState.setOption(option);
+    //    学生课程状态指数
+    let studentState = echarts.init(document.getElementById('studentState'), 'dark');
+    option = {
+        backgroundColor: 'transparent',
+        title: {
+            text: '浏览器占比变化',
+            subtext: '纯属虚构',
+            top: 10,
+            left: 10
+        },
+        tooltip: {
+            trigger: 'item',
+            backgroundColor: 'rgba(0,0,250,0.2)'
+        },
+        legend: {
+            type: 'scroll',
+            bottom: 10,
+            data: (function () {
+                var list = [];
+                for (var i = 1; i <= 28; i++) {
+                    list.push(i + 2000 + '');
+                }
+                return list;
+            })()
+        },
+        visualMap: {
+            top: 'middle',
+            right: 10,
+            color: ['red', 'yellow'],
+            calculable: true
+        },
+        radar: {
+            indicator: [
+                {text: 'IE8-', max: 400},
+                {text: 'IE9+', max: 400},
+                {text: 'Safari', max: 400},
+                {text: 'Firefox', max: 400},
+                {text: 'Chrome', max: 400}
+            ]
+        },
+        series: (function () {
+            var series = [];
+            for (var i = 1; i <= 28; i++) {
+                series.push({
+                    name: '浏览器（数据纯属虚构）',
+                    type: 'radar',
+                    symbol: 'none',
+                    lineStyle: {
+                        width: 1
+                    },
+                    emphasis: {
+                        areaStyle: {
+                            color: 'rgba(0,250,0,0.3)'
+                        }
+                    },
+                    // data: [
+                    //     {
+                    //         value: [
+                    //             (40 - i) * 10,
+                    //             (38 - i) * 4 + 60,
+                    //             i * 5 + 10,
+                    //             i * 9,
+                    //             i * i / 2
+                    //         ],
+                    //         name: i + 2000 + ''
+                    //     }
+                    // ]
+                });
+            }
+            return series;
+        })()
+    };
+    studentState.setOption(option);
+</script>
+</body>
+</html>
